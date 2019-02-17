@@ -16,11 +16,6 @@ int verifyItems(vector <string> origItems, vector <float> origPrices, vector <st
 
     int countOfMismatchedItems = 0;
 
-    // for(auto it=hashAlexItems.begin(); it!=hashAlexItems.end(); it++)
-    // {
-    //     cout<<it->first<<" "<<it->second<<endl;
-    // }
-
     for(int j=0; j<origItems.size(); j++)
     {
         string inventoryItemName = origItems[j];
@@ -46,9 +41,6 @@ int verifyItems(vector <string> origItems, vector <float> origPrices, vector <st
 
     return countOfMismatchedItems;
 
-
-
-
 }
 
 int main()
@@ -64,7 +56,6 @@ int main()
     string itemName;
     float itemPrice;
 
-    //Take the count of Orig Items in the inventory
     cin >> n;
 
     if (n < 1 || n > 100000)
@@ -91,6 +82,12 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> itemPrice;
+
+        if(itemPrice<1.00 || itemPrice>100000.0)
+        {
+            cout<<"Please enter price only in the range [1,100000]";
+            return 0;
+        }
 
         origPrices.push_back(itemPrice);
     }
@@ -122,6 +119,12 @@ int main()
     for (int i = 0; i < m; i++)
     {
         cin >> itemPrice;
+
+          if(itemPrice<1.00 || itemPrice>100000.0)
+        {
+            cout<<"Please enter price only in the range [1,100000]";
+            return 0;
+        }
 
         prices.push_back(itemPrice);
     }

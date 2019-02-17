@@ -87,6 +87,13 @@ class MoviesController extends Controller
 
     }
 
+    else
+    {
+        return response()->json([
+            'message' => "No movies with the substring exist",
+        ]);
+    }
+
     }
 
     public function getMatchedMoviesSorted()
@@ -137,6 +144,13 @@ class MoviesController extends Controller
 
 
             return $titles;
+
+    }
+    else
+    {
+        return response()->json([
+            'message' => "No movies with the substring exist",
+        ]);
 
     }
 
